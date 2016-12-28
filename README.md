@@ -1,13 +1,21 @@
-﻿# vqweb
-VQ运营中心
+# VQ运营中心
 
-### 使用说明
+### 操作说明
 
-# 安装依赖
-npm install
-
-# 运行服务
-npm run dev
-
-# 生成发布
-npm run build
+> 1.下载到本地
+> 
+> 	$ git clone git@github.com:Roc-Chen/fxt-vqweb.git
+>
+> 2.安装依赖
+>
+> 	$ cd [your dir]
+>
+> 	$ npm install
+>
+> 3.本地运行
+>
+> 	$ npm run dev
+>
+> 4.发布
+>
+> 	$ npm run build
