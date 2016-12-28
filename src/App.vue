@@ -1,8 +1,8 @@
 <template>
 	<div id="app">
-		<transition name="bounce">
+		<!-- <transition name="bounce"> -->
 			<router-view></router-view>
-		</transition>
+		<!-- </transition> -->
 	</div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
   components: {
   },
   created:function(){
-	  this.$router.replace('/login')
+	  /*this.$router.replace('/login')*/
   }
 }
 </script>
