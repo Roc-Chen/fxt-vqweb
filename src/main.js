@@ -1,6 +1,7 @@
 import babelpolyfill from 'babel-polyfill'
 import Vue from 'vue'
 import App from './App'
+import $ from 'jquery'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import VueRouter from 'vue-router'
@@ -19,6 +20,8 @@ import Page4 from './components/nav2/Page4.vue'
 import Page5 from './components/nav2/Page5.vue'
 import Page6 from './components/nav3/Page6.vue'
 import Page7 from './components/charts/Page7.vue'
+import Page8 from './components/nav3/Page8.vue'
+import Page9 from './components/nav3/Page9.vue'
 import echarts from './components/charts/echarts.vue'
 
 Vue.use(ElementUI)
@@ -36,7 +39,7 @@ const routes = [
     path: '/',
     component: Home,
     name: '导航一',
-    iconCls: 'el-icon-message',//图标样式class
+    iconCls: 'el-icon-star-on',//图标样式class
     children: [
       //{ path: '/main', component: Main },
       { path: '/table', component: Table, name: 'Table' },
@@ -62,6 +65,16 @@ const routes = [
     leaf: true,//只有一个节点
     children: [
       { path: '/page6', component: Page6, name: '导航三' }
+    ]
+  },
+  {
+    path: '/',
+    component: Home,
+    name: '导航四',
+    iconCls: 'el-icon-setting',
+    children: [
+      { path: '/page8', component: Page8, name: '页面8' },
+      { path: '/page9', component: Page9, name: '页面9' }
     ]
   },
   {

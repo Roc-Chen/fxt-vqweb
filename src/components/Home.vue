@@ -2,10 +2,11 @@
 	<el-row class="panel">
 		<el-col :span="24" class="panel-top">
 			<el-col :span="20" style="font-size:26px;">
-				<img src="../assets/logo4.png" class="logo"> <span>VQ<i style="color:#20a0ff">运营中心</i></span>
+				<img src="../assets/logo4.png" class="logo"> <span>VQ<i style="color:#20a0ff">运营中心
+				</i></span>
 			</el-col>
 			<el-col :span="4">
-			<h5 class="admin"><i class="fa fa-user" aria-hidden="true" style="margin-right:5px;"></i>欢迎系统管理员：测试</h5>
+			<h5 class="admin"><i class="fa fa-user" aria-hidden="true" style="margin-right:5px;"></i>欢迎系统管理员：{{administrator}}</h5>
 				<el-tooltip class="item tip-logout" effect="dark" content="退出" placement="bottom" style="padding:0px;">
 					<!--<i class="logout" v-on:click="logout"></i>-->
 					<i class="fa fa-sign-out" aria-hidden="true" v-on:click="logout"></i>
@@ -70,6 +71,7 @@
       return {
 		  currentPathName:'Table',
 		  currentPathNameParent:'导航一',
+		  administrator:'陈鹏',
         form: {
           name: '',
           region: '',
