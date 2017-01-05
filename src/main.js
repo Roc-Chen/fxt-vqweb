@@ -23,6 +23,7 @@ import Page7 from './components/charts/Page7.vue'
 import Page8 from './components/nav3/Page8.vue'
 import Page9 from './components/nav3/Page9.vue'
 import echarts from './components/charts/echarts.vue'
+import businessCount from './components/nav1/businessCount.vue'
 
 Vue.use(ElementUI)
 Vue.use(VueRouter)
@@ -45,6 +46,8 @@ const routes = [
       { path: '/table', component: Table, name: 'Table' },
       { path: '/form', component: Form, name: 'Form' },
       { path: '/page3', component: Page3, name: '页面3' },
+      { path: '/businessCount', component: businessCount, name: '业务量统计' }
+      
     ]
   },
   {
