@@ -7,7 +7,7 @@
 					<el-input v-model="formInline.user" placeholder="姓名"></el-input>
 				</el-form-item>
 				<el-form-item>
-					<el-button>查询</el-button>
+					<el-button @click="getData">查询</el-button>
 				</el-form-item>
 				<el-form-item>
 					<el-button @click="handleAdd">新增</el-button>
@@ -85,6 +85,9 @@
 	import NProgress from 'nprogress'
 
   export default {
+  	mounted(){
+  		this.getData()
+    },
     data() {
       return {
 				formInline: {
@@ -114,63 +117,6 @@
 						{ required: true, message: '请输入姓名', trigger: 'blur' }
 					]
 				},
-				tableData: [{
-					id:1000,
-					name: 'lanqy1',
-					sex: 1,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}, {
-					id:1001,
-					name: 'lanqy2',
-					sex: 1,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}, {
-					id:1002,
-					name: 'lanqy3',
-					sex: 0,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}, {
-					id:1003,
-					name: 'lanqy4',
-					sex: 1,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}, {
-					id:1004,
-					name: 'lanqy5',
-					sex: 1,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}, {
-					id:1005,
-					name: 'lanqy6',
-					sex: 1,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}, {
-					id:1006,
-					name: 'lanqy7',
-					sex: 1,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}, {
-					id:1007,
-					name: 'lanqy8',
-					sex: 1,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}],
 				listLoading:false
      		}
     },
@@ -286,6 +232,32 @@
 				this.editForm.age=0;
 				this.editForm.birth='';
 				this.editForm.addr='';
+			},
+			getData: function(){
+				var that = this;
+				$.ajax( {  
+			         type : "get",  
+			         url : "/api/hello",
+			         async:false, 
+			         success : function(data) {  
+			            that.tableData = [{
+		            	id:11111,
+						name: data,
+						sex: 1,
+						age: 20,
+						birth:'1996-03-02',
+			            },
+			            {
+			            	id:11111,
+							name: '333333',
+							sex: 1,
+							age: 20,
+							birth:'1996-03-02',
+			            }];
+			         },  
+			         error : function(error) {   
+			         }  
+		        });
 			}
     }
   }
